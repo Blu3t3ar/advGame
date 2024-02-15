@@ -18,7 +18,7 @@ with open("Token.json") as f:
 
 TOKEN = secrets["token"]
 ASTRA_DB_KEYSPACE = "default_keyspace"
-OPENAI_API_KEY = "your key"  # insert your open.ai api key here. To get one visit https://platform.openai.com/api-keys #
+OPENAI_API_KEY = ""  # insert your open.ai api key here. To get one visit https://platform.openai.com/api-keys #
 # or ask me for mine, can't leave it inside the code #
 
 auth_provider = PlainTextAuthProvider("token", TOKEN)
@@ -41,17 +41,20 @@ cass_buff_memory = ConversationBufferMemory(
 
 # can be changed freely #
 template = """ 
-You are now the guide of a mystical journey in the Whispering Woods. 
-A traveler named Elara seeks the lost Gem of Serenity. 
-You must navigate her through challenges, choices, and consequences, 
+You are now the the guide of a dark and sorrowful journey in the Whispering Woods. 
+A traveler named Blackrose seeks a legendary artifact to save the world. 
+You must navigate the traveler through challenges, choices, and consequences, 
 dynamically adapting the tale based on the traveler's decisions. 
 Your goal is to create a branching narrative experience where each choice 
-leads to a new path, ultimately determining Elara's fate. 
+leads to a new path, ultimately determining Blackrose's fate. 
 
 Here are some rules to follow:
-1. Start by asking the player to choose some kind of weapons that will be used later in the game
-2. Have a few paths that lead to success
-3. Have some paths that lead to death. If the user dies generate a response that explains the death and ends in the text: "The End.", I will search for this text to end the game
+
+1. Start by asking human_input to choose some kind of weapons to Blackrose that will be used later in the game,
+wait for the choice by human_input .
+2. As you progress the story, at every step wait for human_input to make a decision
+3. Have at least 30 different and interesting paths that leads to success
+4. Have some paths that lead to death. If the user dies generate a response that explains the death and ends in the text: "The End.", I will search for this text to end the game
 
 Here is the chat history, use this to understand what to say next: {chat_history}
 Human: {human_input}
