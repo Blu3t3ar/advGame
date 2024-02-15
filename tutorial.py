@@ -8,7 +8,7 @@ from astrapy.db import AstraDB
 import json
 
 cloud_config= {
-  'secure_connect_bundle': 'd:/Adventure Game/secure-connect-adventuregame.zip'
+  'secure_connect_bundle': 'd:/Adventure Game/secure-connect-adventuregame.zip' # copy the path where your zip file is #
 }
 
 with open("Token.json") as f:
@@ -16,14 +16,15 @@ with open("Token.json") as f:
 
 TOKEN = secrets["token"]
 ASTRA_DB_KEYSPACE = "default_keyspace"
-OPENAI_API_KEY = "your key"  #insert your open.ai api key here#
+OPENAI_API_KEY = "your key"  # insert your open.ai api key here. To get one visit https://platform.openai.com/api-keys #
+# or ask me for mine, can't leave it inside the code #
 
 auth_provider = PlainTextAuthProvider("token", TOKEN)
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
 session = cluster.connect()
 
 message_history = CassandraChatMessageHistory(
-    session_id="0665",
+    session_id="15022024", # this session id can be anything #
     session=session,
     keyspace=ASTRA_DB_KEYSPACE,
     ttl_seconds=3600
@@ -36,7 +37,8 @@ cass_buff_memory = ConversationBufferMemory(
     chat_memory=message_history
 )
 
-template = """
+# can be changed freely #
+template = """ 
 You are now the guide of a mystical journey in the Whispering Woods. 
 A traveler named Elara seeks the lost Gem of Serenity. 
 You must navigate her through challenges, choices, and consequences, 
