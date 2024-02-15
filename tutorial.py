@@ -16,7 +16,7 @@ with open("Token.json") as f:
 
 TOKEN = secrets["token"]
 ASTRA_DB_KEYSPACE = "default_keyspace"
-OPENAI_API_KEY = "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"
+OPENAI_API_KEY = "your key"  #insert your open.ai api key here#
 
 auth_provider = PlainTextAuthProvider("token", TOKEN)
 cluster = Cluster(cloud=cloud_config, auth_provider=auth_provider)
