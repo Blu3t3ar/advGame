@@ -4,8 +4,10 @@ from langchain.memory import CassandraChatMessageHistory, ConversationBufferMemo
 from langchain_openai import OpenAI
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
-from astrapy.db import AstraDB
+from astrapy.db import AstraDB # not sure what to do here check the video #
 import json
+
+# run the env.bat and install everything like in the tutorial , if its not working properly do the code line by line #
 
 cloud_config= {
   'secure_connect_bundle': 'd:/Adventure Game/secure-connect-adventuregame.zip' # copy the path where your zip file is #
