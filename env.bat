@@ -1,6 +1,4 @@
-conda create --name adventureGame
-y
-activate adventureGame
+pip install langchain
 pip install -U langchain-community
 pip install -U langchain-openai
 pip install cassandra-driver

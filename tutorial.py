@@ -18,7 +18,7 @@ with open("Token.json") as f:
 
 TOKEN = secrets["token"]
 ASTRA_DB_KEYSPACE = "default_keyspace"
-OPENAI_API_KEY = ""  # insert your open.ai api key here. To get one visit https://platform.openai.com/api-keys #
+OPENAI_API_KEY = "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"  # insert your open.ai api key here. To get one visit https://platform.openai.com/api-keys #
 # or ask me for mine, can't leave it inside the code #
 
 auth_provider = PlainTextAuthProvider("token", TOKEN)
