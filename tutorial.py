@@ -10,7 +10,7 @@ import json
 # run the env.bat and install everything like in the tutorial , if its not working properly do the code line by line #
 
 cloud_config= {
-  'secure_connect_bundle': 'secure-connect-adventuregame.zip' # copy the path where your zip file is #
+  'secure_connect_bundle': 'secure-connect-adventuregame.zip' 
 }
 
 with open("Token.json") as f:
